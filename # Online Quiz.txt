@@ -1,0 +1,67 @@
+
+# Online Quiz Application
+
+questions = [
+    {
+        "question": "1. What is the capital of India?",
+        "options": ["A. Mumbai", "B. Delhi", "C. Chennai", "D. Kolkata"],
+        "answer": "B"
+    },
+    {
+        "question": "2. Which language is used for AI?",
+        "options": ["A. HTML", "B. CSS", "C. Python", "D. XML"],
+        "answer": "C"
+    },
+    {
+        "question": "3. What is 10 + 20?",
+        "options": ["A. 20", "B. 30", "C. 40", "D. 50"],
+        "answer": "B"
+    },
+    {
+        "question": "4. Which one is a database?",
+        "options": ["A. MySQL", "B. HTML", "C. CSS", "D. Photoshop"],
+        "answer": "A"
+    },
+    {
+        "question": "5. Which company developed Python?",
+        "options": ["A. Microsoft", "B. Google",
+                    "C. Python Software Foundation", "D. Apple"],
+        "answer": "C"
+    }
+]
+
+score = 0
+
+print("================================")
+print("     ONLINE QUIZ APPLICATION")
+print("================================")
+
+name = input("Enter your name: ")
+print("\nWelcome,", name)
+print("Choose the correct option (A/B/C/D)\n")
+
+for q in questions:
+    print(q["question"])
+
+    for option in q["options"]:
+        print(option)
+
+    answer = input("Your answer: ").strip().upper()
+
+    if answer == q["answer"]:
+        print("Correct answer!\n")
+        score += 1
+    else:
+        print("Wrong answer!")
+        print("Correct option:", q["answer"], "\n")
+
+print("================================")
+print("          QUIZ RESULT")
+print("================================")
+print("Student Name:", name)
+print("Total Questions:", len(questions))
+print("Correct Answers:", score)
+print("Wrong Answers:", len(questions) - score)
+print("Final Score:", str(score) + "/" + str(len(questions)))
+print("Percentage:", round(score / len(questions) * 100, 2), "%")
+print("================================")
